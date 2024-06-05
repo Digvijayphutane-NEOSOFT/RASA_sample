@@ -1,0 +1,17 @@
+domain.yml - define all intents, responses we are going to create.
+creadentials.yml - used to connect your bot to external channels.
+endpoints.yml - here all endpoints are store , if you want to use any just uncomment that endpoint.
+data/nlu.yml - training data which we provide to the model from which it cerate intent. 
+rules.yml - these are the rules which bots need to perform.
+stories.yml - conversation file , on which how to bot will repond depends.
+
+Action / Response : action is the response from a chatbot based on the given query.
+intents : can be defien as a aim or intention of the user input
+ -for ex. hi hello , gm , gn can be treated as a greeting intents 
+entities : Entities can be describe as a usefull information extracted from a user input.
+ -for ex. "i want to book ticket from delhi to kochin", here both delhi and kochin are entities(location)
+
+ Rasa components : It has 2 main components RASA NLU and RASA CORE 
+  -RASA NLU : It is a interpreter which processes the user input and indentifies the intents and extracts the entities from It
+  -RASA CORE : RASA CORE receives the output from RASA NLU (dict which specifies intents , entities and other information) and based on that Rasa CORE selects teh appropriate reply and send it back to the user as a bot reply.
+  
