@@ -5,31 +5,42 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - action: question_form
+
+- story: ask question
+  steps: 
+  - intent: questions
+  - action: utter_ask_age
 
 - story: tell weather
   steps: 
-  - intent: weather
+  - user: 'what is the weather today'
   - action: utter_weather
 
 - story: sad path 1
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - action: question_form
 
-- story: sad path 2
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+- story: interactive_story_1
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - action: question_form
+  - active_loop: question_form
+  - slot_was_set:
+    - requested_slot: age
+  - intent: questions
+    entities:
+    - number: '22'
+  - slot_was_set:
+    - age: '22'

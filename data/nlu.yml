@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,12 +15,13 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-- intent : weather
+- intent: questions
   examples: |
-    - how is the weather today ? 
-    - weather
-    - tell me todays weather
-    - what is the weather today?
+    - I'm [22](number) years old
+    - My age is [16](number)
+    - My phone number is [1234567890](number)
+    - This is my phone number [987654321](number)
+    - my age is [22](number)
 - intent: goodbye
   examples: |
     - cu
@@ -34,7 +34,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -43,7 +42,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -53,7 +51,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -70,7 +67,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -87,7 +83,6 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?

@@ -11,3 +11,9 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: rule for questions
+  steps:
+  - intent: greet
+  - action: question_form
+  - active_loop: question_form
