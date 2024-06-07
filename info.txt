@@ -15,3 +15,12 @@ entities : Entities can be describe as a usefull information extracted from a us
   -RASA NLU : It is a interpreter which processes the user input and indentifies the intents and extracts the entities from It
   -RASA CORE : RASA CORE receives the output from RASA NLU (dict which specifies intents , entities and other information) and based on that Rasa CORE selects teh appropriate reply and send it back to the user as a bot reply.
   
+slots : mem location where we can store your data which can be used later in the conversation,
+        suppose if you mention your name , number , age in the conversation , then the bot will save the perticuler info in the slots.
+        we can use it when we need it later in the conversation
+ 
+ when we have sigle slot then its fine to use the stories 
+ but when we have multiple slots then we need to use the forms 
+
+ forms in define with the defining rules to activate it 
+whaenever slots we define in thr form , that form will ask the user to execute the slot until gets execute
