@@ -2,45 +2,79 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: question_form
-
-- story: ask question
-  steps: 
-  - intent: questions
-  - action: utter_ask_age
-
-- story: tell weather
-  steps: 
-  - user: 'what is the weather today'
-  - action: utter_weather
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: question_form
-
-# - story: sad path 2
+# - story: happy path
 #   steps:
 #   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_goodbye
+#   - action: question_form
+
+# - story: ask question
+#   steps: 
+#   - intent: questions
+#   - action: utter_ask_age
+
+# - story: tell weather
+#   steps: 
+#   - user: 'what is the weather today'
+#   - action: utter_weather
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: question_form
+
+# # - story: sad path 2
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - intent: mood_unhappy
+# #   - action: utter_cheer_up
+# #   - action: utter_did_that_help
+# #   - intent: deny
+# #   - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: question_form
+#   - active_loop: question_form
+#   - slot_was_set:
+#     - requested_slot: age
+#   - intent: questions
+#     entities:
+#     - number: '22'
+#   - slot_was_set:
+#     - age: '22'
 
 - story: interactive_story_1
   steps:
   - intent: greet
-  - action: question_form
-  - active_loop: question_form
+  - action: simple_form
+  - active_loop: simple_form
   - slot_was_set:
-    - requested_slot: age
-  - intent: questions
+    - requested_slot: name
+  - intent: inform
     entities:
-    - number: '22'
+    - name: Digvijay
   - slot_was_set:
-    - age: '22'
+    - name: Digvijay
+  - action: simple_form
+  - slot_was_set:
+    - requested_slot: city
+  - intent: inform
+    entities:
+    - city: Delhi
+  - slot_was_set:
+    - city: Delhi
+  - action: simple_form
+  - slot_was_set:
+    - requested_slot: phone
+  - intent: inform
+    entities:
+    - number: '9876543234'
+  - slot_was_set:
+    - phone: '9876543234'
+  - action: simple_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_say_data

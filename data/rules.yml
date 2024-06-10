@@ -12,8 +12,18 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: rule for questions
+- rule: activate form loop
   steps:
   - intent: greet
-  - action: question_form
-  - active_loop: question_form
+  - action: simple_form
+  - active_loop: simple_form
+
+- rule: submit form
+  condition: 
+  - active_loop: simple_form
+  steps:
+  - action: simple_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: action_say_data

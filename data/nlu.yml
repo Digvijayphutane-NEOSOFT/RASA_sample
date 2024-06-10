@@ -22,6 +22,23 @@ nlu:
     - My phone number is [1234567890](number)
     - This is my phone number [987654321](number)
     - my age is [22](number)
+- intent: inform
+  examples: |
+    - [972617470](number)
+    - this is mu phone number [123456789}(number)
+    - Here you go [98765432](number)
+    - My name is [Digvijay](name)
+    - Im [yogesh](name)
+    - people call me [rohit](name)
+    - [Ankur](name)
+    - my name is [Anu](name)
+    - I live in [New york](city)
+    - i am from [mumbai](city)
+    - my city name is [mumbai](city)
+    - My city is [Delhi](city)
+    - [Digvijay](name)
+    - [Delhi](city)
+    - [9876543234](number)
 - intent: goodbye
   examples: |
     - cu
